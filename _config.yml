@@ -2,7 +2,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://quentinrossetti.github.io
+url: http://quentinrossetti.github.io//github
 title: From my keyboard
 subtitle: Yet an other IT geek blog.
 author: Your Name
@@ -16,7 +16,7 @@ description: Yet an other IT geek blog.
 date_format: "ordinal"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
-subscribe_rss: /atom.xml
+subscribe_rss: /github/atom.xml
 subscribe_email: quentin.rossetti@gmail.com
 # RSS feeds can list your email address if you like
 email: quentin.rossetti@gmail.com
@@ -26,10 +26,10 @@ email: quentin.rossetti@gmail.com
 # ----------------------- #
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
-root: /
+root: /github
 permalink: /blog/:year/:month/:day/:title/
 source: source
-destination: public
+destination: public/github
 plugins: plugins
 code_dir: downloads/code
 category_dir: blog/categories
