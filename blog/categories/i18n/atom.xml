@@ -4,7 +4,7 @@
   <title><![CDATA[Category: I18n | From my keyboard]]></title>
   <link href="http://quentinrossetti.github.io/octopress/blog/categories/i18n/atom.xml" rel="self"/>
   <link href="http://quentinrossetti.github.io/octopress/"/>
-  <updated>2014-10-12T17:47:31+00:00</updated>
+  <updated>2014-10-12T19:43:45+00:00</updated>
   <id>http://quentinrossetti.github.io/octopress/</id>
   <author>
     <name><![CDATA[Quentin Rossetti]]></name>
@@ -19,6 +19,8 @@
     <updated>2014-10-08T19:06:13+00:00</updated>
     <id>http://quentinrossetti.github.io/octopress/blog/2014/10/08/translate-custom-folder-in-osx</id>
     <content type="html"><![CDATA[<p>Sous Mac OSX chaque dossier a des propriétés : ses permissions (droits de lecture, écriture), son icône, ou encore son nom <em>traduit</em>. Dans cet article il sera question de cette dernière propriété.</p>
+
+<blockquote><p>Article à corriger</p></blockquote>
 
 <h2>Comprendre les chemins localisés</h2>
 
