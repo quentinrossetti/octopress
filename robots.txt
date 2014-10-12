@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://quentinrossetti.github.io/octopress/sitemap.xml 

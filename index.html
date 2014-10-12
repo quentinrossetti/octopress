@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>From my keyboard</title>
+  <meta name="author" content="Quentin Rossetti">
+
+  
+  <meta name="description" content="Sous Mac OSX chaque dossier a des propriétés : ses permissions (droits de lecture, écriture), son icône, ou encore son nom traduit. Dans cet article &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://quentinrossetti.github.io/octopress">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/stylesheets/base.css" type="text/css" media="screen">
+  <link href="/github/atom.xml" rel="alternate" title="From my keyboard" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55578086-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">From my keyboard</a></h1>
+  
+    <h2>Yet an other IT geek blog.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss email">
+  <li><a href="/github/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+    <li><a href="quentin.rossetti@gmail.com" rel="subscribe-email" title="subscribe via email">Email</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:quentinrossetti.github.io/octopress" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/10/08/translate-custom-folder-in-osx/">Translate Custom Folder in OSX</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-10-08T19:06:13+00:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>7:06 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Sous Mac OSX chaque dossier a des propriétés : ses permissions (droits de lecture, écriture), son icône, ou encore son nom <em>traduit</em>. Dans cet article il sera question de cette dernière propriété.</p>
+
+<h2>Comprendre les chemins localisés</h2>
+
+<p>Prenons comme exemple le dossier utilisateur. En tant qu&#8217;utilisateur français les noms des dossiers sont &ldquo;Bureau&rdquo;, &ldquo;Documents&rdquo;, &ldquo;Images&rdquo;.</p>
+
+<p><img src="/images/001-finder-perso.png" alt="Finder" /></p>
+
+<p>Pourtant si l&#8217;on ouvre un <em>Terminal</em> (dans <em>Spotlight</em> tapez &ldquo;Terminal&rdquo; pour l&#8217;ouvrir) et que l&#8217;on rentre la commande <code>ls</code> on remarque que les noms des dossiers sont en anglais (&ldquo;Desktop&rdquo;, &ldquo;Documents&rdquo;, &ldquo;Pictures&rdquo;).</p>
+
+<p><img src="/images/001-terminal-perso.png" alt="Terminal" /></p>
+
+<p>Pour opérer cette traduction le Finder dispose de fichiers de traduction.</p>
+
+<h2>Créer ses propres dossiers traduits</h2>
+
+<p>Ce ficher de traduction peut être édité pour modifier ou ajouter vos propres traductions. Par exemple dans les images précédentes j&#8217;ai crée un dossier &ldquo;Development&rdquo; avec la commande <code>mkdir Development</code>. Pour le traduire en &ldquo;Développement&rdquo; il faut modifier le ficher <code>/System/Library/CoreServices/SystemFolderLocalizations/fr.lproj/SystemFolderLocalizations.strings</code> avec votre éditeur de texte favoris.</p>
+
+<p><img src="/images/001-strings.png" alt="Editeur" /></p>
+
+<p>Comme vous pouvez le voir il est très facile de modifier des traductions existantes ou d&#8217;en rajouter soi-même.</p>
+
+<h2>Pour les dossiers en dehors du dossier personnel</h2>
+
+<p>La technique si dessus est cependant limité aux seuls dossiers situés directement dans le dossier personnel (c&#8217;est à dire <code>/Users/&lt;you&gt;</code>). Il y a une méthode pour surmonter cela.</p>
+
+<ul>
+<li>Créez votre dossier avec le vrai nom en utilisant la ligne de commande (<code>mkdir MyDir.localized</code>)</li>
+<li>Dans ce répertoire créez-en un autre <code>mkdir .localized</code></li>
+<li>Ensuite vous créez des fichiers texte nommés <code>fr.strings</code> ou <code>it.string</code> par exemple dans ce dossier</li>
+<li>Ces fichiers contiennent vos traductions dans ce format: <code>"MyDir" = "Mon Dossier";</code></li>
+</ul>
+
+
+<p>Cette dernière technique est issue de la documentation des développeurs Mac dans <a href="https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPInternational/Articles/LocalizingPathnames.html">cet article</a>.</p>
+
+<h2>Conclusion</h2>
+
+<p>Avec OSX vous pouvez sans trop de difficulté changer et même créer vos propre traduction.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/10/08/translate-custom-folder-in-osx/">Translate Custom Folder in OSX</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/quentinrossetti">@quentinrossetti</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'quentinrossetti',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/quentin.rossetti?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Quentin Rossetti -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

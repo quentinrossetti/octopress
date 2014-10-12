@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Osx | From my keyboard]]></title>
+  <link href="http://quentinrossetti.github.io/octopress/blog/categories/osx/atom.xml" rel="self"/>
+  <link href="http://quentinrossetti.github.io/octopress/"/>
+  <updated>2014-10-12T17:47:31+00:00</updated>
+  <id>http://quentinrossetti.github.io/octopress/</id>
+  <author>
+    <name><![CDATA[Quentin Rossetti]]></name>
+    <email><![CDATA[quentin.rossetti@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Translate Custom Folder in OSX]]></title>
+    <link href="http://quentinrossetti.github.io/octopress/blog/2014/10/08/translate-custom-folder-in-osx/"/>
+    <updated>2014-10-08T19:06:13+00:00</updated>
+    <id>http://quentinrossetti.github.io/octopress/blog/2014/10/08/translate-custom-folder-in-osx</id>
+    <content type="html"><![CDATA[<p>Sous Mac OSX chaque dossier a des propriétés : ses permissions (droits de lecture, écriture), son icône, ou encore son nom <em>traduit</em>. Dans cet article il sera question de cette dernière propriété.</p>
+
+<h2>Comprendre les chemins localisés</h2>
+
+<p>Prenons comme exemple le dossier utilisateur. En tant qu&#8217;utilisateur français les noms des dossiers sont &ldquo;Bureau&rdquo;, &ldquo;Documents&rdquo;, &ldquo;Images&rdquo;.</p>
+
+<p><img src="/images/001-finder-perso.png" alt="Finder" /></p>
+
+<p>Pourtant si l&#8217;on ouvre un <em>Terminal</em> (dans <em>Spotlight</em> tapez &ldquo;Terminal&rdquo; pour l&#8217;ouvrir) et que l&#8217;on rentre la commande <code>ls</code> on remarque que les noms des dossiers sont en anglais (&ldquo;Desktop&rdquo;, &ldquo;Documents&rdquo;, &ldquo;Pictures&rdquo;).</p>
+
+<p><img src="/images/001-terminal-perso.png" alt="Terminal" /></p>
+
+<p>Pour opérer cette traduction le Finder dispose de fichiers de traduction.</p>
+
+<h2>Créer ses propres dossiers traduits</h2>
+
+<p>Ce ficher de traduction peut être édité pour modifier ou ajouter vos propres traductions. Par exemple dans les images précédentes j&#8217;ai crée un dossier &ldquo;Development&rdquo; avec la commande <code>mkdir Development</code>. Pour le traduire en &ldquo;Développement&rdquo; il faut modifier le ficher <code>/System/Library/CoreServices/SystemFolderLocalizations/fr.lproj/SystemFolderLocalizations.strings</code> avec votre éditeur de texte favoris.</p>
+
+<p><img src="/images/001-strings.png" alt="Editeur" /></p>
+
+<p>Comme vous pouvez le voir il est très facile de modifier des traductions existantes ou d&#8217;en rajouter soi-même.</p>
+
+<h2>Pour les dossiers en dehors du dossier personnel</h2>
+
+<p>La technique si dessus est cependant limité aux seuls dossiers situés directement dans le dossier personnel (c&#8217;est à dire <code>/Users/&lt;you&gt;</code>). Il y a une méthode pour surmonter cela.</p>
+
+<ul>
+<li>Créez votre dossier avec le vrai nom en utilisant la ligne de commande (<code>mkdir MyDir.localized</code>)</li>
+<li>Dans ce répertoire créez-en un autre <code>mkdir .localized</code></li>
+<li>Ensuite vous créez des fichiers texte nommés <code>fr.strings</code> ou <code>it.string</code> par exemple dans ce dossier</li>
+<li>Ces fichiers contiennent vos traductions dans ce format: <code>"MyDir" = "Mon Dossier";</code></li>
+</ul>
+
+
+<p>Cette dernière technique est issue de la documentation des développeurs Mac dans <a href="https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPInternational/Articles/LocalizingPathnames.html">cet article</a>.</p>
+
+<h2>Conclusion</h2>
+
+<p>Avec OSX vous pouvez sans trop de difficulté changer et même créer vos propre traduction.</p>
+]]></content>
+  </entry>
+  
+</feed>
